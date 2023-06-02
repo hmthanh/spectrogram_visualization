@@ -1,2 +1,4 @@
 # Spectrogram Visualization
 
+![](./spectrogram.png)
+

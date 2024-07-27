@@ -2,8 +2,10 @@
   "name": "spectrogram_visualization",
   "version": "1.0.0",
   "description": "Spectrogram Visualization",
-  "main": "src/index.js",
+  "source": "src/index.html",
   "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
     "test": "npm run test"
   },
   "repository": {

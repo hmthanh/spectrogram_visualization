@@ -1,4 +1,9 @@
 # Spectrogram Visualization
 
-![](./spectrogram.png)
+![spectrogram](./spectrogram.png)
 
+## Start
+
+```bash
+npm run dev
+```

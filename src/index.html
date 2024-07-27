@@ -11,14 +11,14 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <meta charset="utf-8">
   <title>Spectrogram Visualization</title>
-  <script src="js/3D/matrix4x4.js"></script>
-  <script src="js/3D/cameracontroller.js"></script>
-  <script src="js/3D/visualizer.js"></script>
-  <script src="js/o3djs/base.js"></script>
-  <script src="js/o3djs/math.js"></script>
-  <script src="js/o3djs/quaternions.js"></script>
-  <script src="js/o3djs/shader.js"></script>
-  <script src="js/spectrogram.js"></script>
+  <script src="../js/3D/matrix4x4.js"></script>
+  <script src="../js/3D/cameracontroller.js"></script>
+  <script src="../js/3D/visualizer.js"></script>
+  <script src="../js/o3djs/base.js"></script>
+  <script src="../js/o3djs/math.js"></script>
+  <script src="../js/o3djs/quaternions.js"></script>
+  <script src="../js/o3djs/shader.js"></script>
+  <script src="../js/spectrogram.js"></script>
   <style>
     audio,
     canvas {
@@ -35,8 +35,8 @@
   </style>
 </head>
 <script>
-  function playFromFile() {
-
+  function handleChangeFile() {
+    console.log("object");
   };
 </script>
 
@@ -61,18 +61,19 @@
 
     <div class="row">
       <div class="container">
-        <audio controls autoplay loop id="myAudio" onplay="spec3D.start(myAudio, myCanvas)">
-          <source src="sound/021_Neutral_4_x_1_0.wav" />
+        <!-- <audio controls autoplay loop id="myAudio" onplay="spec3D.start(myAudio, myCanvas)"> -->
+          <audio controls autoplay loop id="myAudio" onplay="spec3D.start(myAudio, myCanvas)">
+          <source src="../sound/021_Neutral_4_x_1_0.wav" />
         </audio>
       </div>
     </div>
 
     <div class="row">
       <form>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
           <label for="formFile" class="form-label">Default file input example</label>
-          <input class="form-control" type="file" id="formFile">
-        </div> -->
+          <input class="form-control" type="file" id="formFile" onchange="(e) => handleChangeFile(e)">
+        </div>
         <div class="form-group">
           <select class="form-control" onchange="spec3D.analyserView.analysisType = this.selectedIndex">
             <option>Frequency</option>

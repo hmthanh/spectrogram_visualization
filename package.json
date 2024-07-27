@@ -1,0 +1,27 @@
+{
+  "name": "spectrogram_visualization",
+  "version": "1.0.0",
+  "description": "Spectrogram Visualization",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmthanh/spectrogram_visualization.git"
+  },
+  "keywords": [
+    "spectrogram",
+    "visualization",
+    "sound"
+  ],
+  "author": "Thanh Hoang-Minh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmthanh/spectrogram_visualization/issues"
+  },
+  "homepage": "https://github.com/hmthanh/spectrogram_visualization#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

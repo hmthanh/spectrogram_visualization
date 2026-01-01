@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <title>Spectrogram Visualization</title>
+  <script src="js/3D/matrix4x4.js"></script>
+  <script src="js/3D/cameracontroller.js"></script>
+  <script src="js/3D/visualizer.js"></script>
+  <script src="js/o3djs/base.js"></script>
+  <script src="js/o3djs/math.js"></script>
+  <script src="js/o3djs/quaternions.js"></script>
+  <script src="js/o3djs/shader.js"></script>
+  <script src="js/spectrogram.js"></script>
+  <style>
+    audio,
+    canvas {
+      width: 90vw;
+    }
+
+    select {
+      width: 100%
+    }
+
+    #originalCanvas {
+      height: 50vh;
+    }
+
+    #generateCanvas {
+      height: 50vh;
+    }
+  </style>
+</head>
+<script>
+  function playFromFile() {
+
+  };
+</script>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+    <h3 class="text-center p-sm-1">Spectrogram Visualization</h3>
+  </header>
+  <main>
+
+  </main>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="container">
+        <audio controls autoplay loop id="originalAudio" onplay="spec3D.start(originalAudio, originalCanvas)">
+          <source src="audio/ImplicitBias_RebeccaRoseVocal.wav" />
+        </audio>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container">
+        <audio controls autoplay loop id="generatedAudio" onplay="spec3D.start(generatedAudio, generateCanvas)">
+          <source src="audio/ImplicitBias_F5-TTS.wav" />
+        </audio>
+      </div>
+    </div>
+
+    <div class="row">
+      <form>
+        <!-- <div class="mb-3">
+          <label for="formFile" class="form-label">Default file input example</label>
+          <input class="form-control" type="file" id="formFile">
+        </div> -->
+        <div class="form-group">
+          <select class="form-control" onchange="spec3D.analyserView.analysisType = this.selectedIndex">
+            <option selected>3D Sonogram</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <!-- <hr /> -->
+    <div class="row">
+      <canvas id="originalCanvas"></canvas>
+    </div>
+    <!-- <hr /> -->
+    <div class="row">
+      <canvas id="generateCanvas"></canvas>
+    </div>
+  </div>
+  <!-- place footer here -->
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-muted">© 2023 OpenHuman, Inc</span>
+    </div>
+  </footer>
+  <!-- place footer here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
